@@ -8,6 +8,7 @@
   <meta name="keywords" content="THE JOE CLINIC, เดอะโจ คลินิก, คลินิกความงาม ลาซาล, คลินิกความงาม บางนา, หมอโจ, นพ.ธวัช เขียววัฒนกุล, โบท็อกซ์ บางนา, ฟิลเลอร์ ลาซาล, Joeligio, THE JOE LIFT, Linear HIFU">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.thejoeclinic.com/">
+  <link rel="icon" href="https://drive.google.com/thumbnail?id=12dMadXTRqdBZtG5ngOnTnFquRji5GvNR&sz=w256">
 
   <!-- Open Graph / Social Media Share Preview (LINE, Facebook) -->
   <meta property="og:type" content="website">
@@ -26,7 +27,7 @@
     "name": "THE JOE CLINIC (เดอะโจ คลินิกเวชกรรม)",
     "alternateName": "เดอะโจ คลินิกเวชกรรม",
     "url": "https://www.thejoeclinic.com/",
-    "logo": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663940949164/gdpcbjTtUVUDuvvb.webp",
+    "logo": "https://drive.google.com/thumbnail?id=12dMadXTRqdBZtG5ngOnTnFquRji5GvNR&sz=w1000",
     "image": "https://drive.google.com/thumbnail?id=1jIpsSl1dm84-If9NvD165i7GXN9wk139&sz=w1600",
     "description": "คลินิกเวชกรรมและความงาม ย่านลาซาล-บางนา ดูแลโดยแพทย์ทุกเคส หมอโจ นพ.ธวัช เขียววัฒนกุล (ว.56831) บริการยกกระชับ Joeligio, THE JOE LIFT, Linear HIFU, โบท็อกซ์ และฟิลเลอร์",
     "telephone": "+66656969390",
@@ -73,6 +74,26 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <script>
+    const LOGO_FILE_ID = '12dMadXTRqdBZtG5ngOnTnFquRji5GvNR';
+    const LOGO_FALLBACK_PATHS = [
+      `https://drive.google.com/thumbnail?id=${LOGO_FILE_ID}&sz=w1000`,
+      `https://lh3.googleusercontent.com/d/${LOGO_FILE_ID}=w1000`,
+      `https://lh3.googleusercontent.com/d/${LOGO_FILE_ID}`,
+      `https://drive.google.com/uc?export=view&id=${LOGO_FILE_ID}`
+    ];
+
+    window.tryNextLogoPath = function(imgEl) {
+      if (!imgEl) return;
+      let idx = parseInt(imgEl.getAttribute('data-logo-idx') || '0', 10);
+      idx += 1;
+      if (idx < LOGO_FALLBACK_PATHS.length) {
+        imgEl.setAttribute('data-logo-idx', String(idx));
+        imgEl.src = LOGO_FALLBACK_PATHS[idx];
+      } else {
+        imgEl.onerror = null;
+      }
+    };
+
     const DRIVE_FILE_ID = '1jIpsSl1dm84-If9NvD165i7GXN9wk139';
     const DOCTOR_DIRECT_URL = `https://drive.google.com/thumbnail?id=${DRIVE_FILE_ID}&sz=w1600`;
     const DOCTOR_FALLBACK_PATHS = [
@@ -114,7 +135,6 @@
         imgEl.src = DOCTOR_FALLBACK_PATHS[idx];
       } else {
         imgEl.onerror = null;
-        // If browser blocks all direct <img> endpoints from Google Drive, activate the embedded Google Drive preview for this exact file ID
         const fallbackFrame = imgEl.parentElement ? imgEl.parentElement.querySelector('.doctor-drive-iframe-fallback') : null;
         if (fallbackFrame) {
           fallbackFrame.classList.remove('hidden');
@@ -137,24 +157,24 @@
           },
           colors: {
             navy: {
-              700: '#1b2e5e',
-              800: '#101f42',
-              900: '#0b152e',
-              950: '#060c1c',
+              700: '#233559',
+              800: '#16264A',
+              900: '#0B132B',
+              950: '#060C1C',
             },
             gold: {
-              200: '#f9ebb2',
-              300: '#f3dd8d',
-              400: '#e5c45c',
-              500: '#d4af37',
-              600: '#b59024',
-              700: '#8f6f15',
+              200: '#F3E5AB',
+              300: '#F3DD8D',
+              400: '#E5C45C',
+              500: '#D4AF37',
+              600: '#B59024',
+              700: '#8F6F15',
             },
             royal: {
-              500: '#1e40af',
-              600: '#172554',
-              700: '#0a185c',
-              800: '#061045',
+              500: '#40547A',
+              600: '#2A3E67',
+              700: '#1B2E5E',
+              800: '#101F42',
             }
           }
         }
@@ -164,24 +184,23 @@
 
   <style>
     .gold-gradient-text {
-      background: linear-gradient(135deg, #fbeea8 0%, #d4af37 50%, #aa8214 100%);
+      background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 50%, #AA8214 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
     .gold-gradient-bg {
-      background: linear-gradient(135deg, #f7e396 0%, #d4af37 55%, #b58d1e 100%);
+      background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 55%, #B58D1E 100%);
     }
     .royal-pill-bg {
-      background: linear-gradient(90deg, #071978 0%, #0d27a1 50%, #051154 100%);
+      background: linear-gradient(90deg, #101F42 0%, #1B2E5E 50%, #0B132B 100%);
     }
     .navy-gold-card {
-      background: linear-gradient(180deg, rgba(16, 31, 66, 0.96) 0%, rgba(8, 16, 36, 0.99) 100%);
+      background: linear-gradient(180deg, rgba(11, 19, 43, 0.96) 0%, rgba(6, 12, 28, 0.99) 100%);
       border: 1px solid rgba(212, 175, 55, 0.28);
     }
     .doctor-photo-frame {
       background-color: #d9d9d9;
     }
-    /* Ensure buttons, badges, and nav items never wrap awkwardly */
     button, a.btn-nowrap, .nowrap-pill {
       white-space: nowrap;
       flex-shrink: 0;
@@ -193,25 +212,77 @@
     .glow-slow {
       animation: pulseGlow 5s ease-in-out infinite;
     }
+
+    #promotions .grid > div.bg-white,
+    #joeligio-lift .grid > div.rounded-3xl,
+    #botox-filler .grid > div.bg-white {
+      transition: transform .35s cubic-bezier(.2,.75,.25,1),
+                  box-shadow .35s ease, border-color .35s ease;
+      will-change: transform;
+    }
+    @media (hover: hover) {
+      #promotions .grid > div.bg-white:hover,
+      #joeligio-lift .grid > div.rounded-3xl:hover,
+      #botox-filler .grid > div.bg-white:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 22px 55px rgba(11,19,43,.13);
+        border-color: rgba(212,175,55,.58);
+      }
+      #promotions button:hover,
+      #joeligio-lift button:hover,
+      #botox-filler button:hover,
+      #promotions a:hover,
+      #joeligio-lift a:hover,
+      #botox-filler a:hover {
+        filter: brightness(1.11);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(11,19,43,.18);
+      }
+      #promotions .text-3xl:hover,
+      #joeligio-lift .text-3xl:hover,
+      #botox-filler .text-2xl:hover {
+        text-shadow: 0 0 12px rgba(243,221,141,.32);
+      }
+    }
+    #promotions button, #joeligio-lift button, #botox-filler button,
+    #promotions a, #joeligio-lift a, #botox-filler a {
+      transition: transform .26s ease, box-shadow .26s ease, filter .26s ease;
+    }
+    #promotions button:focus-visible, #joeligio-lift button:focus-visible,
+    #botox-filler button:focus-visible, #promotions a:focus-visible,
+    #joeligio-lift a:focus-visible, #botox-filler a:focus-visible {
+      outline: 3px solid #D4AF37;
+      outline-offset: 3px;
+    }
+    .doctor-real-img { object-position: center top; }
+    @media (prefers-reduced-motion: reduce) {
+      #promotions *, #joeligio-lift *, #botox-filler * {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+      }
+      #promotions .grid > div.bg-white:hover,
+      #joeligio-lift .grid > div.rounded-3xl:hover,
+      #botox-filler .grid > div.bg-white:hover { transform: none; }
+    }
   </style>
 </head>
-<body class="bg-[#faf8f4] text-slate-800 antialiased selection:bg-gold-500 selection:text-navy-950 font-sans">
+<body id="top" class="bg-[#FAF8F4] text-slate-800 antialiased selection:bg-gold-500 selection:text-navy-950 font-sans overflow-x-hidden">
 
   <!-- TOP OFFICIAL BAR -->
-  <div class="bg-navy-950 text-slate-300 text-xs border-b border-gold-500/25 py-2.5 px-4 sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-2">
+  <div class="bg-navy-950 text-slate-300 text-xs border-b border-gold-500/25 py-2.5 px-4 sm:px-6 lg:px-10 sticky top-0 z-50">
+    <div class="w-full max-w-[1520px] mx-auto flex flex-col md:flex-row items-center justify-between gap-2">
       <div class="flex flex-wrap items-center justify-center md:justify-start gap-2 sm:gap-3">
         <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-gold-500/15 text-gold-300 font-medium text-[11px] border border-gold-500/35 whitespace-nowrap shrink-0">
           <i data-lucide="shield-check" class="w-3.5 h-3.5 text-gold-400 shrink-0"></i>
           <span>ใบอนุญาตสถานพยาบาลเลขที่ 10101033467</span>
         </span>
         <span class="hidden sm:inline text-slate-600">|</span>
-        <span class="text-[11px] text-slate-300">
+        <span class="text-[11px] text-slate-300 text-center md:text-left">
           135 ซอยลาซาล (ระหว่างซอยลาซาล 1 และ 3) ถนนสุขุมวิท บางนา • ดูแลโดย <strong class="text-gold-300 whitespace-nowrap">หมอโจ นพ.ธวัช เขียววัฒนกุล ว.56831</strong>
         </span>
       </div>
       <div class="flex items-center gap-4 text-[11px] whitespace-nowrap shrink-0">
-        <span class="hidden lg:flex items-center gap-1.5 text-slate-300 whitespace-nowrap">
+        <span class="hidden xl:flex items-center gap-1.5 text-slate-300 whitespace-nowrap">
           <i data-lucide="clock" class="w-3.5 h-3.5 text-gold-400 shrink-0"></i>
           <span>เปิดบริการ วันจันทร์และวันเสาร์ 12.00 - 20.00 น.</span>
         </span>
@@ -224,30 +295,18 @@
 
   <!-- MAIN NAVBAR -->
   <header class="bg-navy-900/95 backdrop-blur-md border-b border-gold-500/20 sticky top-[41px] z-40">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-2">
+    <div class="w-full max-w-[1520px] mx-auto px-4 sm:px-6 lg:px-10 h-20 flex items-center justify-between gap-2">
       
-      <!-- Brand Logo -->
-      <a href="#" class="flex items-center gap-3.5 group shrink-0">
-        <div class="w-12 h-12 rounded-2xl bg-navy-950 border border-gold-500/50 p-1.5 flex items-center justify-center shadow-lg shadow-black/50 group-hover:border-gold-300 transition-all overflow-hidden relative shrink-0">
+      <!-- Brand Logo (Google Drive ID: 12dMadXTRqdBZtG5ngOnTnFquRji5GvNR) -->
+      <a href="#top" class="flex items-center gap-3 group shrink-0">
+        <div class="w-12 h-12 rounded-2xl bg-navy-950 border border-gold-500/50 p-1 flex items-center justify-center shadow-lg shadow-black/50 group-hover:border-gold-300 transition-all overflow-hidden relative shrink-0">
           <img 
-            src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663940949164/gdpcbjTtUVUDuvvb.webp" 
+            src="https://drive.google.com/thumbnail?id=12dMadXTRqdBZtG5ngOnTnFquRji5GvNR&sz=w1000" 
+            referrerpolicy="no-referrer"
             alt="THE JOE CLINIC Logo" 
             class="w-full h-full object-contain relative z-10"
-            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            onerror="tryNextLogoPath(this)"
           />
-          <div class="hidden items-center justify-center w-full h-full">
-            <svg viewBox="0 0 100 65" class="w-9 h-9">
-              <defs>
-                <linearGradient id="logoGold" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#f9ebb2"/>
-                  <stop offset="50%" stop-color="#d4af37"/>
-                  <stop offset="100%" stop-color="#94741c"/>
-                </linearGradient>
-              </defs>
-              <circle cx="38" cy="32" r="20" fill="none" stroke="url(#logoGold)" stroke-width="5"/>
-              <circle cx="62" cy="32" r="20" fill="none" stroke="url(#logoGold)" stroke-width="5"/>
-            </svg>
-          </div>
         </div>
         <div class="whitespace-nowrap">
           <div class="flex items-baseline gap-1.5">
@@ -259,7 +318,7 @@
       </a>
 
       <!-- Desktop Menu -->
-      <nav class="hidden lg:flex items-center gap-4 xl:gap-6 text-xs xl:text-sm font-medium text-slate-200 whitespace-nowrap">
+      <nav class="hidden lg:flex items-center gap-3.5 xl:gap-6 text-xs xl:text-sm font-medium text-slate-200 whitespace-nowrap">
         <a href="#promotions" class="hover:text-gold-400 transition-colors text-gold-300 flex items-center gap-1.5 font-semibold whitespace-nowrap shrink-0">
           <span>โปรโมชั่น 2026</span>
           <span class="px-1.5 py-0.5 rounded bg-red-600 text-white text-[9px] font-bold tracking-wider whitespace-nowrap shrink-0">BEST SELLER</span>
@@ -273,12 +332,12 @@
       </nav>
 
       <!-- CTA Buttons -->
-      <div class="hidden sm:flex items-center gap-2.5 shrink-0">
-        <a href="https://line.me/R/ti/p/@thejoeclinic" target="_blank" class="px-3.5 py-2.5 rounded-xl text-xs font-bold text-slate-950 bg-[#06C755] hover:bg-[#05b34c] shadow-sm transition-all flex items-center gap-1.5 whitespace-nowrap shrink-0">
+      <div class="hidden sm:flex items-center gap-2 xl:gap-2.5 shrink-0">
+        <a href="https://line.me/R/ti/p/@thejoeclinic" target="_blank" class="px-3 xl:px-3.5 py-2.5 rounded-xl text-xs font-bold text-slate-950 bg-[#06C755] hover:bg-[#05b34c] shadow-sm transition-all flex items-center gap-1.5 whitespace-nowrap shrink-0">
           <i data-lucide="message-circle" class="w-4 h-4 shrink-0"></i>
           <span>LINE: @thejoeclinic</span>
         </a>
-        <button onclick="openBookingModal()" class="px-4 py-2.5 rounded-xl text-xs font-bold text-navy-950 gold-gradient-bg hover:brightness-110 shadow-md shadow-gold-500/20 transition-all flex items-center gap-1.5 whitespace-nowrap shrink-0">
+        <button onclick="openBookingModal()" class="px-3.5 xl:px-4 py-2.5 rounded-xl text-xs font-bold text-navy-950 gold-gradient-bg hover:brightness-110 shadow-md shadow-gold-500/20 transition-all flex items-center gap-1.5 whitespace-nowrap shrink-0">
           <i data-lucide="calendar" class="w-4 h-4 shrink-0"></i>
           <span>นัดหมายแพทย์</span>
         </button>
@@ -311,16 +370,15 @@
   </header>
 
   <main>
-    <!-- HERO SECTION (MATCHING OFFICIAL BANNER) -->
-    <section class="relative bg-gradient-to-br from-navy-950 via-navy-900 to-navy-950 text-white py-14 lg:py-20 overflow-hidden border-b border-gold-500/30">
-      <!-- Luxury ambient gold glow -->
+    <!-- HERO SECTION -->
+    <section class="relative bg-gradient-to-br from-navy-950 via-navy-900 to-navy-950 text-white py-12 sm:py-16 lg:py-20 overflow-hidden border-b border-gold-500/30">
       <div class="absolute -top-24 right-1/4 w-[480px] h-[480px] bg-gold-500/10 rounded-full blur-3xl pointer-events-none glow-slow"></div>
-      <div class="absolute bottom-0 left-10 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute bottom-0 left-10 w-96 h-96 bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+      <div class="w-full max-w-[1520px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-14 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          <!-- Left Column: Official Headline & 4 Service Icons -->
+          <!-- Left Column -->
           <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
             
             <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-navy-800/90 border border-gold-500/40 text-gold-300 text-xs font-medium tracking-widest uppercase">
@@ -329,13 +387,13 @@
             </div>
 
             <div class="space-y-3">
-              <h1 class="text-3xl sm:text-5xl lg:text-[52px] font-bold tracking-tight leading-[1.2] text-white">
+              <h1 class="text-3xl sm:text-5xl xl:text-[54px] font-bold tracking-tight leading-[1.2] text-white">
                 ดูแลโดยแพทย์ทุกเคส <br>
                 <span class="gold-gradient-text">วางแผนการรักษาเฉพาะบุคคล</span>
               </h1>
               <div class="flex items-center justify-center lg:justify-start gap-3 pt-1">
                 <span class="h-[1px] w-10 bg-gold-500/60 hidden sm:inline-block"></span>
-                <p class="text-lg sm:text-2xl font-semibold text-gold-300 tracking-wide">
+                <p class="text-base sm:text-2xl font-semibold text-gold-300 tracking-wide">
                   ✦ เป้าหมายคือผลลัพธ์ที่เหมาะกับคุณ ✦
                 </p>
                 <span class="h-[1px] w-10 bg-gold-500/60 hidden sm:inline-block"></span>
@@ -346,7 +404,7 @@
               เดอะโจ คลินิกเวชกรรม (THE JOE CLINIC) ให้ความสำคัญกับมาตรฐานทางการแพทย์ ประเมินโครงสร้างใบหน้าและปัญหาผิวอย่างตรงจุดโดย <strong class="text-white font-medium">หมอโจ นพ.ธวัช เขียววัฒนกุล (ว.56831)</strong> ด้วยตัวยาแท้และเครื่องมือยกกระชับมาตรฐานสากล
             </p>
 
-            <!-- 4 Official Circular Pillars from Clinic Banner -->
+            <!-- 4 Official Circular Pillars -->
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-3.5 pt-2">
               <a href="#joeligio-lift" class="group p-4 rounded-2xl bg-navy-900/90 border border-gold-500/30 hover:border-gold-400 transition-all text-center shadow-lg">
                 <div class="w-12 h-12 rounded-full bg-navy-950 border border-gold-400/60 flex items-center justify-center mx-auto mb-2.5 group-hover:scale-105 transition-transform">
@@ -381,7 +439,7 @@
               </a>
             </div>
 
-            <!-- 3 Core Commitments Bar from Banner -->
+            <!-- 3 Core Commitments Bar -->
             <div class="rounded-2xl bg-navy-900/95 border border-gold-500/35 p-4 grid grid-cols-1 sm:grid-cols-3 gap-3 text-left">
               <div class="flex items-center gap-3">
                 <div class="w-9 h-9 rounded-xl bg-gold-500/15 border border-gold-400/40 flex items-center justify-center flex-shrink-0 text-gold-400">
@@ -413,7 +471,7 @@
             </div>
 
             <!-- Action CTA Buttons -->
-            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-2">
+            <div class="flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-3 pt-2">
               <button onclick="openBookingModal()" class="w-full sm:w-auto px-6 py-4 rounded-2xl gold-gradient-bg text-navy-950 font-extrabold text-sm shadow-xl shadow-gold-500/20 hover:brightness-110 transition-all flex items-center justify-center gap-2 whitespace-nowrap shrink-0">
                 <i data-lucide="calendar-check" class="w-4 h-4 shrink-0"></i>
                 <span>นัดปรึกษาหมอโจ (ประเมินหน้าฟรี)</span>
@@ -438,7 +496,7 @@
                 Medical Director & Founder
               </div>
 
-              <!-- Single Clean Gold Frame 100% Full-Bleed (No nested border, no padding, no duplicate badge) -->
+              <!-- Single Clean Gold Frame 100% Full-Bleed -->
               <div class="relative w-full max-w-[300px] aspect-[4/5] mx-auto rounded-3xl border-2 border-[#D4AF37] overflow-hidden bg-[#d9d9d9] shadow-2xl mb-6 p-0">
                 <img 
                   id="hero-doctor-img"
@@ -454,7 +512,6 @@
                   class="doctor-drive-iframe-fallback hidden absolute inset-0 w-full h-full border-0 pointer-events-none"
                   allow="autoplay"
                 ></iframe>
-                <!-- Bottom Name Badge -->
                 <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-navy-950 via-navy-950/85 to-transparent pt-10 pb-3.5 px-3 text-center z-20 pointer-events-none">
                   <p class="text-gold-300 font-bold text-xs sm:text-sm tracking-wide drop-shadow whitespace-nowrap">
                     หมอโจ นพ.ธวัช เขียววัฒนกุล ว.56831
@@ -495,16 +552,16 @@
       </div>
     </section>
 
-    <!-- SECTION 1: BEST SELLER 2026 (OFFICIAL POSTER REPLICA) -->
-    <section id="promotions" class="py-16 lg:py-20 bg-[#f4f1ea] border-b border-slate-200">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- SECTION 1: BEST SELLER 2026 -->
+    <section id="promotions" class="py-16 lg:py-20 bg-[#FAF8F4] border-b border-slate-200">
+      <div class="w-full max-w-[1520px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-14">
         
         <div class="text-center max-w-3xl mx-auto mb-12">
-          <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full royal-pill-bg text-white text-xs font-bold tracking-wider uppercase shadow-md mb-3">
+          <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full royal-pill-bg text-white text-xs font-bold tracking-wider uppercase shadow-md mb-3 border border-gold-500/30">
             <i data-lucide="award" class="w-4 h-4 text-gold-300"></i>
             <span>แนะนำประจำปี 2026</span>
           </div>
-          <h2 class="text-3xl sm:text-5xl font-extrabold text-navy-950 tracking-tight font-display">
+          <h2 class="text-3xl sm:text-5xl font-extrabold text-navy-900 tracking-tight font-display">
             BEST SELLER <span class="text-royal-700">2026</span>
           </h2>
           <p class="text-slate-600 text-sm sm:text-base mt-2">
@@ -512,42 +569,43 @@
           </p>
         </div>
 
-        <!-- 6 Best Seller Cards matching official 2026 poster -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8">
           
-          <!-- Item 1: ริ้วรอย & กราม ลิฟท์กรอบหน้า -->
-          <div class="bg-white rounded-3xl border-2 border-royal-700/80 shadow-lg overflow-hidden flex flex-col justify-between hover:-translate-y-1 transition-all">
+          <!-- Item 1 -->
+          <div class="bg-white rounded-3xl border-2 border-royal-700/80 shadow-lg overflow-hidden flex flex-col justify-between h-full">
             <div class="p-6 text-center space-y-2">
-              <span class="inline-block px-3 py-0.5 rounded-full bg-red-50 text-red-700 text-[11px] font-bold border border-red-200">
+              <span class="inline-block px-3 py-0.5 rounded-full bg-amber-50 text-gold-700 text-[11px] font-bold border border-gold-400/50">
                 NABOTA BOTOX
               </span>
-              <h3 class="text-xl sm:text-2xl font-extrabold text-navy-950 pt-1">
+              <h3 class="text-xl sm:text-2xl font-extrabold text-navy-900 pt-1">
                 ริ้วรอย & กราม
               </h3>
               <p class="text-base font-bold text-slate-700">ลิฟท์กรอบหน้า</p>
               <p class="text-xs text-slate-500">ตัวยาแท้แกะกล่อง ตรวจสอบได้</p>
             </div>
-            <div class="royal-pill-bg px-6 py-4 text-white flex items-center justify-between">
-              <div class="text-left">
-                <span class="text-xs text-gold-300 font-bold block">ปริมาณ</span>
-                <span class="text-sm font-bold">50 Units</span>
+            <div>
+              <div class="royal-pill-bg px-6 py-4 text-white flex items-center justify-between">
+                <div class="text-left">
+                  <span class="text-xs text-gold-300 font-bold block">ปริมาณ</span>
+                  <span class="text-sm font-bold">50 Units</span>
+                </div>
+                <div class="text-right">
+                  <span class="text-3xl font-extrabold tracking-tight text-white">2,999.-</span>
+                </div>
               </div>
-              <div class="text-right">
-                <span class="text-3xl font-extrabold tracking-tight text-white">2,999.-</span>
+              <div class="p-3.5 bg-slate-50 flex justify-between items-center gap-2">
+                <span class="text-[11px] text-slate-500">รวมค่าแพทย์แล้ว</span>
+                <button onclick="selectServiceForBooking('Best Seller: ริ้วรอย & กราม ลิฟท์กรอบหน้า 50 Units (2,999.-)')" class="px-4 py-1.5 rounded-xl bg-navy-900 hover:bg-royal-700 text-gold-300 text-xs font-bold transition-colors">
+                  จองโปรนี้
+                </button>
               </div>
-            </div>
-            <div class="p-3.5 bg-slate-50 flex justify-between items-center">
-              <span class="text-[11px] text-slate-500">รวมค่าแพทย์แล้ว</span>
-              <button onclick="selectServiceForBooking('Best Seller: ริ้วรอย & กราม ลิฟท์กรอบหน้า 50 Units (2,999.-)')" class="px-4 py-1.5 rounded-xl bg-navy-950 hover:bg-royal-700 text-gold-300 text-xs font-bold transition-colors">
-                จองโปรนี้
-              </button>
             </div>
           </div>
 
-          <!-- Item 2: Linear HIFU -->
-          <div class="bg-white rounded-3xl border-2 border-royal-700/80 shadow-lg overflow-hidden flex flex-col justify-between hover:-translate-y-1 transition-all">
+          <!-- Item 2 -->
+          <div class="bg-white rounded-3xl border-2 border-royal-700/80 shadow-lg overflow-hidden flex flex-col justify-between h-full">
             <div class="p-6 text-center space-y-2">
-              <span class="inline-block px-3 py-0.5 rounded-full bg-blue-50 text-royal-700 text-[11px] font-bold border border-blue-200">
+              <span class="inline-block px-3 py-0.5 rounded-full bg-amber-50 text-gold-700 text-[11px] font-bold border border-gold-400/50">
                 LIFTING TECHNOLOGY
               </span>
               <h3 class="text-xl sm:text-2xl font-extrabold text-royal-700 pt-1">
@@ -556,58 +614,62 @@
               <p class="text-base font-bold text-slate-700">เครื่องยกกระชับ</p>
               <p class="text-xs text-slate-500">ยกกระชับใบหน้า เก็บกรอบหน้าเรียว</p>
             </div>
-            <div class="royal-pill-bg px-6 py-3.5 text-white space-y-1.5">
-              <div class="flex items-center justify-between border-b border-white/20 pb-1.5">
-                <span class="text-xs font-semibold text-gold-200">400 Shots</span>
-                <span class="text-2xl font-extrabold">6,000.-</span>
+            <div>
+              <div class="royal-pill-bg px-6 py-3.5 text-white space-y-1.5">
+                <div class="flex items-center justify-between border-b border-white/20 pb-1.5">
+                  <span class="text-xs font-semibold text-gold-200">400 Shots</span>
+                  <span class="text-2xl font-extrabold">6,000.-</span>
+                </div>
+                <div class="flex items-center justify-between pt-0.5">
+                  <span class="text-xs font-semibold text-gold-200">600 Shots</span>
+                  <span class="text-2xl font-extrabold">8,500.-</span>
+                </div>
               </div>
-              <div class="flex items-center justify-between pt-0.5">
-                <span class="text-xs font-semibold text-gold-200">600 Shots</span>
-                <span class="text-2xl font-extrabold">8,500.-</span>
+              <div class="p-3.5 bg-slate-50 flex justify-between items-center gap-2">
+                <span class="text-[11px] text-slate-500">ไม่ต้องพักฟื้น</span>
+                <button onclick="selectServiceForBooking('Best Seller: Linear HIFU 400/600 Shots (6,000.- / 8,500.-)')" class="px-4 py-1.5 rounded-xl bg-navy-900 hover:bg-royal-700 text-gold-300 text-xs font-bold transition-colors">
+                  จองโปรนี้
+                </button>
               </div>
-            </div>
-            <div class="p-3.5 bg-slate-50 flex justify-between items-center">
-              <span class="text-[11px] text-slate-500">ไม่ต้องพักฟื้น</span>
-              <button onclick="selectServiceForBooking('Best Seller: Linear HIFU 400/600 Shots (6,000.- / 8,500.-)')" class="px-4 py-1.5 rounded-xl bg-navy-950 hover:bg-royal-700 text-gold-300 text-xs font-bold transition-colors">
-                จองโปรนี้
-              </button>
             </div>
           </div>
 
-          <!-- Item 3: Biostimulator sculp -->
-          <div class="bg-white rounded-3xl border-2 border-royal-700/80 shadow-lg overflow-hidden flex flex-col justify-between hover:-translate-y-1 transition-all">
+          <!-- Item 3 -->
+          <div class="bg-white rounded-3xl border-2 border-royal-700/80 shadow-lg overflow-hidden flex flex-col justify-between h-full">
             <div class="p-6 text-center space-y-2">
-              <span class="inline-block px-3 py-0.5 rounded-full bg-rose-50 text-rose-700 text-[11px] font-bold border border-rose-200">
+              <span class="inline-block px-3 py-0.5 rounded-full bg-amber-50 text-gold-700 text-[11px] font-bold border border-gold-400/50">
                 COLLAGEN BIOSTIMULATOR
               </span>
               <h3 class="text-xl sm:text-2xl font-extrabold text-royal-700 pt-1">
                 Biostimulator
               </h3>
-              <p class="text-lg font-extrabold text-navy-950">sculp</p>
+              <p class="text-lg font-extrabold text-navy-900">sculp</p>
               <p class="text-xs text-slate-500">กระตุ้นคอลลาเจนผิวแน่น อิ่มฟูดูอ่อนเยาว์</p>
             </div>
-            <div class="royal-pill-bg px-6 py-4 text-white flex items-center justify-between">
-              <div class="text-left">
-                <span class="text-xs text-gold-300 font-bold block">ปริมาณ</span>
-                <span class="text-sm font-bold">1 ขวด (10 ml)</span>
+            <div>
+              <div class="royal-pill-bg px-6 py-4 text-white flex items-center justify-between">
+                <div class="text-left">
+                  <span class="text-xs text-gold-300 font-bold block">ปริมาณ</span>
+                  <span class="text-sm font-bold">1 ขวด (10 ml)</span>
+                </div>
+                <div class="text-right">
+                  <span class="text-3xl font-extrabold tracking-tight text-white">19,999.-</span>
+                  <span class="text-[10px] text-gold-200 block">/ ขวด</span>
+                </div>
               </div>
-              <div class="text-right">
-                <span class="text-3xl font-extrabold tracking-tight text-white">19,999.-</span>
-                <span class="text-[10px] text-gold-200 block">/ ขวด</span>
+              <div class="p-3.5 bg-slate-50 flex justify-between items-center gap-2">
+                <span class="text-[11px] text-slate-500">ผสมและดึงยาต่อหน้า</span>
+                <button onclick="selectServiceForBooking('Best Seller: Biostimulator sculp (19,999.-/ขวด)')" class="px-4 py-1.5 rounded-xl bg-navy-900 hover:bg-royal-700 text-gold-300 text-xs font-bold transition-colors">
+                  จองโปรนี้
+                </button>
               </div>
-            </div>
-            <div class="p-3.5 bg-slate-50 flex justify-between items-center">
-              <span class="text-[11px] text-slate-500">ผสมและดึงยาต่อหน้า</span>
-              <button onclick="selectServiceForBooking('Best Seller: Biostimulator sculp (19,999.-/ขวด)')" class="px-4 py-1.5 rounded-xl bg-navy-950 hover:bg-royal-700 text-gold-300 text-xs font-bold transition-colors">
-                จองโปรนี้
-              </button>
             </div>
           </div>
 
-          <!-- Item 4: โปรแกรมฟิลเลอร์ ใต้ตา -->
-          <div class="bg-white rounded-3xl border-2 border-royal-700/80 shadow-lg overflow-hidden flex flex-col justify-between hover:-translate-y-1 transition-all">
+          <!-- Item 4 -->
+          <div class="bg-white rounded-3xl border-2 border-royal-700/80 shadow-lg overflow-hidden flex flex-col justify-between h-full">
             <div class="p-6 text-center space-y-2">
-              <span class="inline-block px-3 py-0.5 rounded-full bg-amber-50 text-amber-800 text-[11px] font-bold border border-amber-200">
+              <span class="inline-block px-3 py-0.5 rounded-full bg-amber-50 text-gold-700 text-[11px] font-bold border border-gold-400/50">
                 UNDER-EYE FILLER
               </span>
               <p class="text-sm font-bold text-slate-700 pt-1">โปรแกรมฟิลเลอร์</p>
@@ -616,22 +678,24 @@
               </h3>
               <p class="text-xs text-slate-500">เติมเต็มร่องลึกใต้ตา หน้าดูสดใสขึ้นทันที</p>
             </div>
-            <div class="royal-pill-bg px-6 py-4 text-white flex items-center justify-between">
-              <span class="text-xs font-semibold text-gold-200">ราคาเริ่มต้น</span>
-              <span class="text-3xl font-extrabold tracking-tight text-white">4,999.-</span>
-            </div>
-            <div class="p-3.5 bg-slate-50 flex justify-between items-center">
-              <span class="text-[11px] text-slate-500">ประเมินโดยหมอโจ</span>
-              <button onclick="selectServiceForBooking('Best Seller: โปรแกรมฟิลเลอร์ ใต้ตา (เริ่มต้น 4,999.-)')" class="px-4 py-1.5 rounded-xl bg-navy-950 hover:bg-royal-700 text-gold-300 text-xs font-bold transition-colors">
-                จองโปรนี้
-              </button>
+            <div>
+              <div class="royal-pill-bg px-6 py-4 text-white flex items-center justify-between">
+                <span class="text-xs font-semibold text-gold-200">ราคาเริ่มต้น</span>
+                <span class="text-3xl font-extrabold tracking-tight text-white">4,999.-</span>
+              </div>
+              <div class="p-3.5 bg-slate-50 flex justify-between items-center gap-2">
+                <span class="text-[11px] text-slate-500">ประเมินโดยหมอโจ</span>
+                <button onclick="selectServiceForBooking('Best Seller: โปรแกรมฟิลเลอร์ ใต้ตา (เริ่มต้น 4,999.-)')" class="px-4 py-1.5 rounded-xl bg-navy-900 hover:bg-royal-700 text-gold-300 text-xs font-bold transition-colors">
+                  จองโปรนี้
+                </button>
+              </div>
             </div>
           </div>
 
-          <!-- Item 5: โปรแกรมฟิลเลอร์ ขมับ -->
-          <div class="bg-white rounded-3xl border-2 border-royal-700/80 shadow-lg overflow-hidden flex flex-col justify-between hover:-translate-y-1 transition-all">
+          <!-- Item 5 -->
+          <div class="bg-white rounded-3xl border-2 border-royal-700/80 shadow-lg overflow-hidden flex flex-col justify-between h-full">
             <div class="p-6 text-center space-y-2">
-              <span class="inline-block px-3 py-0.5 rounded-full bg-amber-50 text-amber-800 text-[11px] font-bold border border-amber-200">
+              <span class="inline-block px-3 py-0.5 rounded-full bg-amber-50 text-gold-700 text-[11px] font-bold border border-gold-400/50">
                 TEMPLE FILLER
               </span>
               <p class="text-sm font-bold text-slate-700 pt-1">โปรแกรมฟิลเลอร์</p>
@@ -640,22 +704,24 @@
               </h3>
               <p class="text-xs text-slate-500">ปรับสัดส่วนใบหน้าละมุน ลดโหนกแก้มเด่น</p>
             </div>
-            <div class="royal-pill-bg px-6 py-4 text-white flex items-center justify-between">
-              <span class="text-xs font-semibold text-gold-200">ราคาเริ่มต้น</span>
-              <span class="text-3xl font-extrabold tracking-tight text-white">4,999.-</span>
-            </div>
-            <div class="p-3.5 bg-slate-50 flex justify-between items-center">
-              <span class="text-[11px] text-slate-500">ปรับรูปหน้าตามโหงวเฮ้ง</span>
-              <button onclick="selectServiceForBooking('Best Seller: โปรแกรมฟิลเลอร์ ขมับ (เริ่มต้น 4,999.-)')" class="px-4 py-1.5 rounded-xl bg-navy-950 hover:bg-royal-700 text-gold-300 text-xs font-bold transition-colors">
-                จองโปรนี้
-              </button>
+            <div>
+              <div class="royal-pill-bg px-6 py-4 text-white flex items-center justify-between">
+                <span class="text-xs font-semibold text-gold-200">ราคาเริ่มต้น</span>
+                <span class="text-3xl font-extrabold tracking-tight text-white">4,999.-</span>
+              </div>
+              <div class="p-3.5 bg-slate-50 flex justify-between items-center gap-2">
+                <span class="text-[11px] text-slate-500">ปรับรูปหน้าตามโหงวเฮ้ง</span>
+                <button onclick="selectServiceForBooking('Best Seller: โปรแกรมฟิลเลอร์ ขมับ (เริ่มต้น 4,999.-)')" class="px-4 py-1.5 rounded-xl bg-navy-900 hover:bg-royal-700 text-gold-300 text-xs font-bold transition-colors">
+                  จองโปรนี้
+                </button>
+              </div>
             </div>
           </div>
 
-          <!-- Item 6: Meso หน้าใส -->
-          <div class="bg-white rounded-3xl border-2 border-royal-700/80 shadow-lg overflow-hidden flex flex-col justify-between hover:-translate-y-1 transition-all">
+          <!-- Item 6 -->
+          <div class="bg-white rounded-3xl border-2 border-royal-700/80 shadow-lg overflow-hidden flex flex-col justify-between h-full">
             <div class="p-6 text-center space-y-2">
-              <span class="inline-block px-3 py-0.5 rounded-full bg-pink-50 text-pink-700 text-[11px] font-bold border border-pink-200">
+              <span class="inline-block px-3 py-0.5 rounded-full bg-amber-50 text-gold-700 text-[11px] font-bold border border-gold-400/50">
                 BRIGHTENING SKIN
               </span>
               <p class="text-sm font-bold text-slate-700 pt-1">Meso</p>
@@ -664,15 +730,17 @@
               </h3>
               <p class="text-xs text-slate-500">ฟื้นฟูผิวหมองคล้ำ เติมวิตามินผิวฉ่ำวาว</p>
             </div>
-            <div class="royal-pill-bg px-6 py-4 text-white flex items-center justify-between">
-              <span class="text-xs font-semibold text-gold-200">โปรโมชั่นครั้งละ</span>
-              <span class="text-3xl font-extrabold tracking-tight text-white">2,999.-</span>
-            </div>
-            <div class="p-3.5 bg-slate-50 flex justify-between items-center">
-              <span class="text-[11px] text-slate-500">ผิวกระจ่างใส สุขภาพดี</span>
-              <button onclick="selectServiceForBooking('Best Seller: Meso หน้าใส (ครั้งละ 2,999.-)')" class="px-4 py-1.5 rounded-xl bg-navy-950 hover:bg-royal-700 text-gold-300 text-xs font-bold transition-colors">
-                จองโปรนี้
-              </button>
+            <div>
+              <div class="royal-pill-bg px-6 py-4 text-white flex items-center justify-between">
+                <span class="text-xs font-semibold text-gold-200">โปรโมชั่นครั้งละ</span>
+                <span class="text-3xl font-extrabold tracking-tight text-white">2,999.-</span>
+              </div>
+              <div class="p-3.5 bg-slate-50 flex justify-between items-center gap-2">
+                <span class="text-[11px] text-slate-500">ผิวกระจ่างใส สุขภาพดี</span>
+                <button onclick="selectServiceForBooking('Best Seller: Meso หน้าใส (ครั้งละ 2,999.-)')" class="px-4 py-1.5 rounded-xl bg-navy-900 hover:bg-royal-700 text-gold-300 text-xs font-bold transition-colors">
+                  จองโปรนี้
+                </button>
+              </div>
             </div>
           </div>
 
@@ -680,13 +748,13 @@
       </div>
     </section>
 
-    <!-- SECTION 2: JOELIGIO & THE JOE LIFT (OFFICIAL POSTER SHOWCASE) -->
+    <!-- SECTION 2: JOELIGIO & THE JOE LIFT -->
     <section id="joeligio-lift" class="py-16 lg:py-20 bg-white border-b border-slate-200">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="w-full max-w-[1520px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-14">
         
         <div class="text-center max-w-3xl mx-auto mb-12">
-          <span class="px-3.5 py-1 rounded-full bg-navy-950 text-gold-400 text-xs font-semibold uppercase tracking-wider">Signature Lifting Programs</span>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-950 mt-2">
+          <span class="px-3.5 py-1 rounded-full bg-navy-900 text-gold-400 text-xs font-semibold uppercase tracking-wider">Signature Lifting Programs</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 mt-2">
             โปรแกรมยกกระชับปรับรูปหน้า <span class="text-royal-700">Joeligio & THE JOE LIFT</span>
           </h2>
           <p class="text-slate-600 text-sm mt-1">
@@ -697,7 +765,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
           
           <!-- Card Left: โปรแกรม Joeligio -->
-          <div class="rounded-3xl bg-gradient-to-br from-[#f8f6f2] to-[#ede8df] p-6 sm:p-8 border-2 border-royal-700/25 shadow-xl flex flex-col justify-between">
+          <div class="rounded-3xl bg-gradient-to-br from-[#FAF8F4] to-[#F2EEE4] p-6 sm:p-8 border-2 border-royal-700/25 shadow-xl flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between gap-4 mb-6">
                 <div>
@@ -705,12 +773,11 @@
                   <h3 class="text-3xl sm:text-4xl font-extrabold text-royal-700 mt-2 font-display">Joeligio</h3>
                   <p class="text-xs sm:text-sm text-slate-600 mt-1">ยกกระชับผิวแน่น รีดไขมันแก้มและเหนียง กระตุ้นคอลลาเจน</p>
                 </div>
-                <div class="w-14 h-14 rounded-2xl bg-navy-950 text-gold-400 flex items-center justify-center shadow-lg flex-shrink-0">
+                <div class="w-14 h-14 rounded-2xl bg-navy-900 text-gold-400 flex items-center justify-center shadow-lg flex-shrink-0">
                   <i data-lucide="zap" class="w-7 h-7"></i>
                 </div>
               </div>
 
-              <!-- 3 Official Blue Pills -->
               <div class="space-y-4 my-6">
                 <div class="royal-pill-bg rounded-full p-2.5 pr-6 text-white flex items-center justify-between shadow-lg">
                   <div class="w-20 h-20 rounded-full border-2 border-dashed border-gold-300/80 flex flex-col items-center justify-center bg-navy-950/60">
@@ -747,14 +814,14 @@
 
             <div class="pt-4 border-t border-slate-300/80 flex flex-col sm:flex-row items-center justify-between gap-3">
               <span class="text-xs text-slate-600 font-medium">📞 โทรนัดหมาย 065-6969390</span>
-              <button onclick="selectServiceForBooking('โปรแกรม Joeligio (300 / 600 / 900 Shots)')" class="w-full sm:w-auto px-6 py-3 rounded-2xl bg-navy-950 hover:bg-royal-700 text-gold-300 font-bold text-xs sm:text-sm transition-colors">
+              <button onclick="selectServiceForBooking('โปรแกรม Joeligio (300 / 600 / 900 Shots)')" class="w-full sm:w-auto px-6 py-3 rounded-2xl bg-navy-900 hover:bg-royal-700 text-gold-300 font-bold text-xs sm:text-sm transition-colors">
                 จองโปรแกรม Joeligio
               </button>
             </div>
           </div>
 
           <!-- Card Right: โปรแกรม THE JOE LIFT -->
-          <div class="rounded-3xl bg-gradient-to-br from-[#f8f6f2] to-[#ede8df] p-6 sm:p-8 border-2 border-gold-500/40 shadow-xl flex flex-col justify-between">
+          <div class="rounded-3xl bg-gradient-to-br from-[#FAF8F4] to-[#F2EEE4] p-6 sm:p-8 border-2 border-gold-500/40 shadow-xl flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between gap-4 mb-5">
                 <div>
@@ -767,7 +834,6 @@
                 </div>
               </div>
 
-              <!-- 4 Tier Pills from Official Image -->
               <div class="space-y-3 my-5">
                 <div class="royal-pill-bg rounded-full px-6 py-3.5 text-white flex items-center justify-between shadow-md">
                   <div>
@@ -802,8 +868,7 @@
                 </div>
               </div>
 
-              <!-- 4 Checkmarks from bottom of poster -->
-              <div class="grid grid-cols-2 gap-2 text-xs text-navy-950 font-semibold bg-white/80 p-3.5 rounded-2xl border border-slate-200">
+              <div class="grid grid-cols-2 gap-2 text-xs text-navy-900 font-semibold bg-white/90 p-3.5 rounded-2xl border border-slate-200">
                 <span class="flex items-center gap-1.5">✅ ช่วยยกกระชับกรอบหน้า</span>
                 <span class="flex items-center gap-1.5">✅ ลดความหย่อนคล้อย</span>
                 <span class="flex items-center gap-1.5">✅ เก็บเหนียง ปรับ contour หน้า</span>
@@ -813,7 +878,7 @@
 
             <div class="pt-4 mt-4 border-t border-slate-300/80 flex flex-col sm:flex-row items-center justify-between gap-3">
               <span class="text-xs text-slate-600 font-medium">ดูแลโดย นพ.ธวัช ทุกเคส</span>
-              <button onclick="selectServiceForBooking('โปรแกรม THE JOE LIFT (Lite / Signature / Prime / Prestige)')" class="w-full sm:w-auto px-6 py-3 rounded-2xl bg-navy-950 hover:bg-royal-700 text-gold-300 font-bold text-xs sm:text-sm transition-colors">
+              <button onclick="selectServiceForBooking('โปรแกรม THE JOE LIFT (Lite / Signature / Prime / Prestige)')" class="w-full sm:w-auto px-6 py-3 rounded-2xl bg-navy-900 hover:bg-royal-700 text-gold-300 font-bold text-xs sm:text-sm transition-colors">
                 จองโปรแกรม THE JOE LIFT
               </button>
             </div>
@@ -824,12 +889,12 @@
     </section>
 
     <!-- SECTION 3: BOTOX & FILLER OFFICIAL PROGRAMS -->
-    <section id="botox-filler" class="py-16 lg:py-20 bg-[#f7f5f0] border-b border-slate-200">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
+    <section id="botox-filler" class="py-16 lg:py-20 bg-[#FAF8F4] border-b border-slate-200">
+      <div class="w-full max-w-[1520px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-14 space-y-14">
         
         <div class="text-center max-w-3xl mx-auto">
-          <span class="px-3.5 py-1 rounded-full bg-navy-950 text-gold-400 text-xs font-semibold uppercase tracking-wider">Injectable & Contouring</span>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-950 mt-2">
+          <span class="px-3.5 py-1 rounded-full bg-navy-900 text-gold-400 text-xs font-semibold uppercase tracking-wider">Injectable & Contouring</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 mt-2">
             โปรแกรมฉีดโบท็อกซ์ & สารเติมเต็มฟิลเลอร์
           </h2>
           <p class="text-slate-600 text-sm mt-1">
@@ -837,69 +902,69 @@
           </p>
         </div>
 
-        <!-- Part A: โปรแกรมฉีดโบท็อกซ์ 6 แพ็กเกจ (Nabota) -->
+        <!-- Part A: โปรแกรมฉีดโบท็อกซ์ 6 แพ็กเกจ -->
         <div class="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-lg">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-6 border-b border-slate-100">
             <div>
               <span class="px-3 py-1 rounded-full royal-pill-bg text-white text-xs font-bold">โปรแกรมฉีดโบท็อกซ์</span>
-              <h3 class="text-2xl font-extrabold text-navy-950 mt-2">ลดริ้วรอย • ลดขนาดกราม • ลิฟท์กรอบหน้า</h3>
+              <h3 class="text-2xl font-extrabold text-navy-900 mt-2">ลดริ้วรอย • ลดขนาดกราม • ลิฟท์กรอบหน้า</h3>
             </div>
-            <button onclick="selectServiceForBooking('โปรแกรมฉีดโบท็อกซ์ (15U / 50U / 100U / 150U)')" class="px-5 py-2.5 rounded-xl bg-navy-950 text-gold-300 text-xs font-bold hover:bg-royal-700 transition-colors self-start sm:self-auto">
+            <button onclick="selectServiceForBooking('โปรแกรมฉีดโบท็อกซ์ (15U / 50U / 100U / 150U)')" class="px-5 py-2.5 rounded-xl bg-navy-900 text-gold-300 text-xs font-bold hover:bg-royal-700 transition-colors self-start sm:self-auto">
               จองคิวฉีดโบท็อกซ์
             </button>
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-6">
-            <div class="rounded-2xl bg-slate-50 p-5 border border-slate-200 text-center flex flex-col justify-between">
+            <div class="rounded-2xl bg-[#FAF8F4] p-5 border border-slate-200 text-center flex flex-col justify-between">
               <div>
                 <h4 class="text-lg font-extrabold text-royal-700">ฉีดริ้วรอย</h4>
                 <p class="text-sm font-bold text-slate-700">1 จุด</p>
-                <span class="inline-block my-3 px-4 py-1 rounded-full border border-dashed border-slate-400 text-xs font-bold text-navy-950 bg-white">15 Units</span>
+                <span class="inline-block my-3 px-4 py-1 rounded-full border border-dashed border-gold-500 text-xs font-bold text-navy-900 bg-white">15 Units</span>
               </div>
               <div class="royal-pill-bg rounded-full py-2.5 text-white text-2xl font-extrabold">1,500.-</div>
             </div>
 
-            <div class="rounded-2xl bg-slate-50 p-5 border border-slate-200 text-center flex flex-col justify-between">
+            <div class="rounded-2xl bg-[#FAF8F4] p-5 border border-slate-200 text-center flex flex-col justify-between">
               <div>
                 <h4 class="text-lg font-extrabold text-royal-700">ฉีดริ้วรอย</h4>
                 <p class="text-sm font-bold text-slate-700">ทุกจุดบนใบหน้า</p>
-                <span class="inline-block my-3 px-4 py-1 rounded-full border border-dashed border-slate-400 text-xs font-bold text-navy-950 bg-white">50 Units</span>
+                <span class="inline-block my-3 px-4 py-1 rounded-full border border-dashed border-gold-500 text-xs font-bold text-navy-900 bg-white">50 Units</span>
               </div>
               <div class="royal-pill-bg rounded-full py-2.5 text-white text-2xl font-extrabold">3,999.-</div>
             </div>
 
-            <div class="rounded-2xl bg-slate-50 p-5 border border-slate-200 text-center flex flex-col justify-between">
+            <div class="rounded-2xl bg-[#FAF8F4] p-5 border border-slate-200 text-center flex flex-col justify-between">
               <div>
                 <h4 class="text-sm font-bold text-slate-700">ฉีดลด</h4>
                 <p class="text-lg font-extrabold text-royal-700">ขนาดกราม</p>
-                <span class="inline-block my-3 px-4 py-1 rounded-full border border-dashed border-slate-400 text-xs font-bold text-navy-950 bg-white">50 Units</span>
+                <span class="inline-block my-3 px-4 py-1 rounded-full border border-dashed border-gold-500 text-xs font-bold text-navy-900 bg-white">50 Units</span>
               </div>
               <div class="royal-pill-bg rounded-full py-2.5 text-white text-2xl font-extrabold">3,999.-</div>
             </div>
 
-            <div class="rounded-2xl bg-slate-50 p-5 border border-slate-200 text-center flex flex-col justify-between">
+            <div class="rounded-2xl bg-[#FAF8F4] p-5 border border-slate-200 text-center flex flex-col justify-between">
               <div>
                 <h4 class="text-xs font-bold text-slate-600">เลือกฉีด 2 จุด</h4>
                 <p class="text-lg font-extrabold text-royal-700">ริ้วรอย & กราม</p>
-                <span class="inline-block my-3 px-4 py-1 rounded-full border border-dashed border-slate-400 text-xs font-bold text-navy-950 bg-white">100 Units</span>
+                <span class="inline-block my-3 px-4 py-1 rounded-full border border-dashed border-gold-500 text-xs font-bold text-navy-900 bg-white">100 Units</span>
               </div>
               <div class="royal-pill-bg rounded-full py-2.5 text-white text-2xl font-extrabold">6,999.-</div>
             </div>
 
-            <div class="rounded-2xl bg-slate-50 p-5 border border-slate-200 text-center flex flex-col justify-between">
+            <div class="rounded-2xl bg-[#FAF8F4] p-5 border border-slate-200 text-center flex flex-col justify-between">
               <div>
                 <h4 class="text-xs font-bold text-slate-600">ฉีดยกกระชับ</h4>
                 <p class="text-lg font-extrabold text-royal-700">กรอบหน้า & ลำคอ</p>
-                <span class="inline-block my-3 px-4 py-1 rounded-full border border-dashed border-slate-400 text-xs font-bold text-navy-950 bg-white">100 Units</span>
+                <span class="inline-block my-3 px-4 py-1 rounded-full border border-dashed border-gold-500 text-xs font-bold text-navy-900 bg-white">100 Units</span>
               </div>
               <div class="royal-pill-bg rounded-full py-2.5 text-white text-2xl font-extrabold">6,999.-</div>
             </div>
 
-            <div class="rounded-2xl bg-slate-50 p-5 border border-gold-500/50 text-center flex flex-col justify-between ring-1 ring-gold-400">
+            <div class="rounded-2xl bg-[#FAF8F4] p-5 border border-gold-500/60 text-center flex flex-col justify-between ring-1 ring-gold-400">
               <div>
                 <h4 class="text-xs font-bold text-slate-600">เลือกฉีด 3 จุด</h4>
                 <p class="text-base font-extrabold text-royal-700">ริ้วรอย & กราม • ลิฟท์กรอบหน้า</p>
-                <span class="inline-block my-3 px-4 py-1 rounded-full border border-dashed border-slate-400 text-xs font-bold text-navy-950 bg-white">150 Units</span>
+                <span class="inline-block my-3 px-4 py-1 rounded-full border border-dashed border-gold-500 text-xs font-bold text-navy-900 bg-white">150 Units</span>
               </div>
               <div class="royal-pill-bg rounded-full py-2.5 text-gold-300 text-2xl font-extrabold">8,999.-</div>
             </div>
@@ -909,41 +974,38 @@
         <!-- Part B: โบกล่องม่วง & โบบริสุทธิ์สูง + สารเติมเต็ม ฟิลเลอร์ -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
           
-          <!-- พรีเมียมโบท็อกซ์ (โบกล่องม่วง & โบบริสุทธิ์สูง) -->
           <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-lg flex flex-col justify-between">
             <div>
               <span class="px-3 py-1 rounded-full royal-pill-bg text-white text-xs font-bold">พรีเมียมโบท็อกซ์</span>
-              <h3 class="text-2xl font-extrabold text-navy-950 mt-2">โบกล่องม่วง & โบบริสุทธิ์สูง</h3>
+              <h3 class="text-2xl font-extrabold text-navy-900 mt-2">โบกล่องม่วง & โบบริสุทธิ์สูง</h3>
               <p class="text-xs text-slate-500 mt-1">โมเลกุลบริสุทธิ์ ออกฤทธิ์แม่นยำ ลดโอกาสการดื้อยา</p>
 
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6">
-                <!-- โบกล่องม่วง -->
-                <div class="p-4 rounded-2xl bg-purple-50/70 border border-purple-200 space-y-3">
+                <div class="p-4 rounded-2xl bg-[#FAF8F4] border border-gold-500/35 space-y-3">
                   <div class="text-center">
-                    <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-purple-800 text-white">USA PREMIUM</span>
-                    <h4 class="text-lg font-extrabold text-navy-950 mt-1">โบกล่องม่วง</h4>
+                    <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-navy-900 text-gold-300">USA PREMIUM</span>
+                    <h4 class="text-lg font-extrabold text-navy-900 mt-1">โบกล่องม่วง</h4>
                   </div>
-                  <div class="p-3 rounded-xl bg-white border border-purple-100 text-center">
+                  <div class="p-3 rounded-xl bg-white border border-slate-200 text-center">
                     <p class="text-[11px] text-slate-600">ริ้วรอยทุกจุดบนใบหน้า (50 Units)</p>
                     <p class="text-xl font-extrabold text-royal-700 mt-0.5">8,999.-</p>
                   </div>
-                  <div class="p-3 rounded-xl bg-white border border-purple-100 text-center">
+                  <div class="p-3 rounded-xl bg-white border border-slate-200 text-center">
                     <p class="text-[11px] text-slate-600">เลือกฉีด 2 จุด: ริ้วรอย | กราม | ลิฟท์กรอบหน้า (100 Units)</p>
                     <p class="text-xl font-extrabold text-royal-700 mt-0.5">13,999.-</p>
                   </div>
                 </div>
 
-                <!-- โบบริสุทธิ์สูง -->
-                <div class="p-4 rounded-2xl bg-sky-50/70 border border-sky-200 space-y-3">
+                <div class="p-4 rounded-2xl bg-[#FAF8F4] border border-royal-500/30 space-y-3">
                   <div class="text-center">
-                    <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-sky-700 text-white">PURE TOXIN</span>
-                    <h4 class="text-lg font-extrabold text-navy-950 mt-1">โบบริสุทธิ์สูง</h4>
+                    <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-royal-700 text-white">PURE TOXIN</span>
+                    <h4 class="text-lg font-extrabold text-navy-900 mt-1">โบบริสุทธิ์สูง</h4>
                   </div>
-                  <div class="p-3 rounded-xl bg-white border border-sky-100 text-center">
+                  <div class="p-3 rounded-xl bg-white border border-slate-200 text-center">
                     <p class="text-[11px] text-slate-600">ริ้วรอยทุกจุดบนใบหน้า (50 Units)</p>
                     <p class="text-xl font-extrabold text-royal-700 mt-0.5">7,999.-</p>
                   </div>
-                  <div class="p-3 rounded-xl bg-white border border-sky-100 text-center">
+                  <div class="p-3 rounded-xl bg-white border border-slate-200 text-center">
                     <p class="text-[11px] text-slate-600">เลือกฉีด 2 จุด: ริ้วรอย | กราม | ลิฟท์กรอบหน้า (100 Units)</p>
                     <p class="text-xl font-extrabold text-royal-700 mt-0.5">11,999.-</p>
                   </div>
@@ -951,52 +1013,51 @@
               </div>
             </div>
 
-            <button onclick="selectServiceForBooking('พรีเมียมโบท็อกซ์ (โบกล่องม่วง / โบบริสุทธิ์สูง)')" class="w-full py-3 rounded-2xl bg-navy-950 hover:bg-royal-700 text-gold-300 font-bold text-xs sm:text-sm transition-colors">
+            <button onclick="selectServiceForBooking('พรีเมียมโบท็อกซ์ (โบกล่องม่วง / โบบริสุทธิ์สูง)')" class="w-full py-3 rounded-2xl bg-navy-900 hover:bg-royal-700 text-gold-300 font-bold text-xs sm:text-sm transition-colors">
               จองคิวพรีเมียมโบท็อกซ์
             </button>
           </div>
 
-          <!-- โปรแกรมฉีดสารเติมเต็ม ฟิลเลอร์ -->
           <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-lg flex flex-col justify-between">
             <div>
               <span class="px-3 py-1 rounded-full royal-pill-bg text-white text-xs font-bold">โปรแกรมฉีดสารเติมเต็ม</span>
-              <h3 class="text-2xl font-extrabold text-navy-950 mt-2">ฟิลเลอร์แท้ ปรับรูปหน้าละมุน</h3>
+              <h3 class="text-2xl font-extrabold text-navy-900 mt-2">ฟิลเลอร์แท้ ปรับรูปหน้าละมุน</h3>
               <p class="text-xs text-slate-500 mt-1">เติมเต็มร่องลึก ใต้ตา ขมับ ร่องแก้ม คาง ปากกระจับ โดยหมอโจ</p>
 
               <div class="space-y-4 my-6">
-                <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-between">
+                <div class="p-4 rounded-2xl bg-[#FAF8F4] border border-slate-200 flex items-center justify-between gap-2">
                   <div>
-                    <h4 class="text-lg font-extrabold text-navy-950">ฟิลเลอร์ <span class="text-royal-700">นิวร่า</span> (Neuramis)</h4>
+                    <h4 class="text-lg font-extrabold text-navy-900">ฟิลเลอร์ <span class="text-royal-700">นิวร่า</span> (Neuramis)</h4>
                     <p class="text-xs text-slate-500">1 CC • แกะกล่องใหม่ สแกน QR ได้</p>
                   </div>
-                  <div class="royal-pill-bg px-5 py-2.5 rounded-2xl text-white text-2xl font-extrabold">
+                  <div class="royal-pill-bg px-5 py-2.5 rounded-2xl text-white text-2xl font-extrabold shrink-0">
                     6,999.-
                   </div>
                 </div>
 
-                <div class="p-4 rounded-2xl bg-amber-50/60 border border-amber-200 flex items-center justify-between">
+                <div class="p-4 rounded-2xl bg-[#FAF8F4] border border-gold-400/50 flex items-center justify-between gap-2">
                   <div>
-                    <h4 class="text-lg font-extrabold text-navy-950">ฟิลเลอร์ <span class="text-royal-700">เรสที้</span> (Restylane)</h4>
+                    <h4 class="text-lg font-extrabold text-navy-900">ฟิลเลอร์ <span class="text-royal-700">เรสที้</span> (Restylane)</h4>
                     <p class="text-xs text-slate-500">1 CC • มาตรฐานสวีเดน เนื้อเนียนเป็นธรรมชาติ</p>
                   </div>
-                  <div class="royal-pill-bg px-5 py-2.5 rounded-2xl text-white text-2xl font-extrabold">
+                  <div class="royal-pill-bg px-5 py-2.5 rounded-2xl text-white text-2xl font-extrabold shrink-0">
                     11,999.-
                   </div>
                 </div>
 
-                <div class="p-4 rounded-2xl bg-purple-50/50 border border-purple-200 flex items-center justify-between">
+                <div class="p-4 rounded-2xl bg-[#FAF8F4] border border-gold-500/60 flex items-center justify-between gap-2">
                   <div>
-                    <h4 class="text-lg font-extrabold text-navy-950">ฟิลเลอร์ <span class="text-royal-700">จูวี่</span> (Juvederm)</h4>
+                    <h4 class="text-lg font-extrabold text-navy-900">ฟิลเลอร์ <span class="text-royal-700">จูวี่</span> (Juvederm)</h4>
                     <p class="text-xs text-slate-500">1 CC • พรีเมียม USA อยู่ได้นาน ทรงสวย</p>
                   </div>
-                  <div class="royal-pill-bg px-5 py-2.5 rounded-2xl text-white text-2xl font-extrabold">
+                  <div class="royal-pill-bg px-5 py-2.5 rounded-2xl text-gold-300 text-2xl font-extrabold shrink-0">
                     14,999.-
                   </div>
                 </div>
               </div>
             </div>
 
-            <button onclick="selectServiceForBooking('โปรแกรมฉีดสารเติมเต็ม ฟิลเลอร์ (นิวร่า / เรสที้ / จูวี่)')" class="w-full py-3 rounded-2xl bg-navy-950 hover:bg-royal-700 text-gold-300 font-bold text-xs sm:text-sm transition-colors">
+            <button onclick="selectServiceForBooking('โปรแกรมฉีดสารเติมเต็ม ฟิลเลอร์ (นิวร่า / เรสที้ / จูวี่)')" class="w-full py-3 rounded-2xl bg-navy-900 hover:bg-royal-700 text-gold-300 font-bold text-xs sm:text-sm transition-colors">
               จองคิวฉีดฟิลเลอร์กับหมอโจ
             </button>
           </div>
@@ -1007,10 +1068,9 @@
 
     <!-- DEDICATED DOCTOR PROFILE SECTION -->
     <section id="doctor" class="py-20 bg-white border-b border-slate-200">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="w-full max-w-[1520px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-14">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           
-          <!-- Doctor Portrait Card (Single Clean Gold Frame 100% Full-Bleed) -->
           <div class="lg:col-span-5">
             <div class="max-w-sm mx-auto">
               <div class="relative w-full aspect-[4/5] rounded-3xl border-2 border-[#D4AF37] overflow-hidden bg-[#d9d9d9] shadow-2xl p-0">
@@ -1036,14 +1096,13 @@
             </div>
           </div>
 
-          <!-- Doctor Philosophy & Standards -->
           <div class="lg:col-span-7 space-y-6">
-            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-navy-950 text-gold-400 text-xs font-semibold">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-navy-900 text-gold-400 text-xs font-semibold">
               <i data-lucide="stethoscope" class="w-4 h-4"></i>
               <span>MEDICAL DIRECTOR & FOUNDER</span>
             </div>
 
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-950 leading-tight">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 leading-tight">
               ดูแลโดยแพทย์ทุกเคส <br>
               <span class="text-royal-700">วางแผนการรักษาเฉพาะบุคคล</span>
             </h2>
@@ -1053,29 +1112,29 @@
             </p>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-              <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex items-start gap-3">
-                <div class="w-10 h-10 rounded-xl bg-navy-950 text-gold-400 flex items-center justify-center flex-shrink-0">
+              <div class="p-4 rounded-2xl bg-[#FAF8F4] border border-slate-200 flex items-start gap-3">
+                <div class="w-10 h-10 rounded-xl bg-navy-900 text-gold-400 flex items-center justify-center flex-shrink-0">
                   <i data-lucide="shield-check" class="w-5 h-5"></i>
                 </div>
                 <div>
-                  <h4 class="font-bold text-navy-950 text-sm">มาตรฐานทางการแพทย์เป็นสำคัญ</h4>
+                  <h4 class="font-bold text-navy-900 text-sm">มาตรฐานทางการแพทย์เป็นสำคัญ</h4>
                   <p class="text-xs text-slate-500 mt-0.5">ใช้ตัวยาแท้ผ่าน อย. แกะกล่องต่อหน้าคนไข้ ตรวจสอบได้ทุกชิ้น</p>
                 </div>
               </div>
 
-              <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex items-start gap-3">
-                <div class="w-10 h-10 rounded-xl bg-navy-950 text-gold-400 flex items-center justify-center flex-shrink-0">
+              <div class="p-4 rounded-2xl bg-[#FAF8F4] border border-slate-200 flex items-start gap-3">
+                <div class="w-10 h-10 rounded-xl bg-navy-900 text-gold-400 flex items-center justify-center flex-shrink-0">
                   <i data-lucide="sparkles" class="w-5 h-5"></i>
                 </div>
                 <div>
-                  <h4 class="font-bold text-navy-950 text-sm">ประเมินตรงจุด ไม่ยัดเยียดคอร์ส</h4>
+                  <h4 class="font-bold text-navy-900 text-sm">ประเมินตรงจุด ไม่ยัดเยียดคอร์ส</h4>
                   <p class="text-xs text-slate-500 mt-0.5">ออกแบบการรักษาตามงบประมาณและปัญหาจริง ติดตามผลหลังทำทุกเคส</p>
                 </div>
               </div>
             </div>
 
             <div class="pt-2 flex flex-wrap gap-3">
-              <button onclick="openBookingModal()" class="px-6 py-3.5 rounded-xl bg-navy-950 hover:bg-royal-700 text-gold-300 font-bold text-xs sm:text-sm transition-all flex items-center gap-2">
+              <button onclick="openBookingModal()" class="px-6 py-3.5 rounded-xl bg-navy-900 hover:bg-royal-700 text-gold-300 font-bold text-xs sm:text-sm transition-all flex items-center gap-2">
                 <i data-lucide="calendar" class="w-4 h-4"></i>
                 <span>นัดหมายปรึกษาหมอโจ</span>
               </button>
@@ -1092,7 +1151,7 @@
 
     <!-- OFFICIAL CLINIC LICENSE SECTION (ส.พ. 7) -->
     <section id="license" class="py-16 bg-navy-950 text-white border-t border-gold-500/20">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="w-full max-w-[1520px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-14">
         <div class="navy-gold-card rounded-3xl p-8 sm:p-12 border border-gold-500/35">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
@@ -1126,9 +1185,9 @@
 
             <div class="lg:col-span-4 flex justify-center">
               <div class="p-5 bg-white rounded-2xl shadow-xl text-center max-w-xs w-full border-2 border-gold-400">
-                <div class="p-4 border border-dashed border-rose-300 rounded-xl bg-rose-50/40 mb-3">
+                <div class="p-4 border border-dashed border-gold-400 rounded-xl bg-[#FAF8F4] mb-3">
                   <i data-lucide="shield-check" class="w-12 h-12 text-gold-600 mx-auto mb-2"></i>
-                  <p class="text-xs font-extrabold text-navy-950">เดอะโจ คลินิกเวชกรรม</p>
+                  <p class="text-xs font-extrabold text-navy-900">เดอะโจ คลินิกเวชกรรม</p>
                   <p class="text-[11px] text-slate-600 mt-0.5">ใบอนุญาตเลขที่ 10101033467</p>
                   <p class="text-[10px] text-slate-500 mt-1">กรมสนับสนุนบริการสุขภาพ กระทรวงสาธารณสุข</p>
                 </div>
@@ -1145,106 +1204,106 @@
 
     <!-- INTERACTIVE PRICE CALCULATOR & ONLINE BOOKING -->
     <section id="calculator" class="py-20 bg-white">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-10">
         
         <div class="text-center mb-10">
           <span class="px-3.5 py-1 rounded-full bg-gold-500/15 text-gold-700 text-xs font-semibold uppercase tracking-wider">Price Estimator & Booking</span>
-          <h2 class="text-3xl font-extrabold text-navy-950 mt-2">คำนวณราคาโปรโมชั่น & จองคิวออนไลน์</h2>
+          <h2 class="text-3xl font-extrabold text-navy-900 mt-2">คำนวณราคาโปรโมชั่น & จองคิวออนไลน์</h2>
           <p class="text-slate-500 text-sm mt-1">เลือกโปรแกรมที่สนใจเพื่อดูยอดประเมินเบื้องต้น และนัดคิวปรึกษาคุณหมอโจ</p>
         </div>
 
-        <div class="rounded-3xl border border-slate-200 bg-[#faf8f4] p-6 sm:p-10 shadow-lg">
+        <div class="rounded-3xl border border-slate-200 bg-[#FAF8F4] p-6 sm:p-10 shadow-lg">
           <form id="calculatorForm" onsubmit="handleCalculatorSubmit(event)" class="space-y-6">
             
             <div>
-              <label class="block text-sm font-bold text-navy-950 mb-3">1. เลือกโปรแกรมที่สนใจ (เลือกได้หลายรายการ):</label>
+              <label class="block text-sm font-bold text-navy-900 mb-3">1. เลือกโปรแกรมที่สนใจ (เลือกได้หลายรายการ):</label>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm">
                 
-                <label class="flex items-center justify-between p-3.5 rounded-2xl bg-white border border-slate-200 cursor-pointer hover:border-gold-500 transition-colors">
+                <label class="flex items-center justify-between p-3.5 rounded-2xl bg-white border border-slate-200 cursor-pointer hover:border-gold-500 transition-colors gap-2">
                   <div class="flex items-center gap-2.5">
                     <input type="checkbox" name="calcService" value="2999" data-name="Best Seller ริ้วรอย & กราม ลิฟท์กรอบหน้า 50U" onchange="updateCalcTotal()" class="w-4 h-4 text-navy-900 rounded">
                     <span>ริ้วรอย & กราม ลิฟท์กรอบหน้า (50U)</span>
                   </div>
-                  <span class="font-bold text-royal-700">2,999.-</span>
+                  <span class="font-bold text-royal-700 shrink-0">2,999.-</span>
                 </label>
 
-                <label class="flex items-center justify-between p-3.5 rounded-2xl bg-white border border-slate-200 cursor-pointer hover:border-gold-500 transition-colors">
+                <label class="flex items-center justify-between p-3.5 rounded-2xl bg-white border border-slate-200 cursor-pointer hover:border-gold-500 transition-colors gap-2">
                   <div class="flex items-center gap-2.5">
                     <input type="checkbox" name="calcService" value="9999" data-name="โปรแกรม Joeligio 300 Shots" onchange="updateCalcTotal()" class="w-4 h-4 text-navy-900 rounded">
                     <span>โปรแกรม Joeligio 300 Shots</span>
                   </div>
-                  <span class="font-bold text-royal-700">9,999.-</span>
+                  <span class="font-bold text-royal-700 shrink-0">9,999.-</span>
                 </label>
 
-                <label class="flex items-center justify-between p-3.5 rounded-2xl bg-white border border-slate-200 cursor-pointer hover:border-gold-500 transition-colors">
+                <label class="flex items-center justify-between p-3.5 rounded-2xl bg-white border border-slate-200 cursor-pointer hover:border-gold-500 transition-colors gap-2">
                   <div class="flex items-center gap-2.5">
                     <input type="checkbox" name="calcService" value="18900" data-name="โปรแกรม Joeligio 600 Shots" onchange="updateCalcTotal()" class="w-4 h-4 text-navy-900 rounded">
                     <span>โปรแกรม Joeligio 600 Shots</span>
                   </div>
-                  <span class="font-bold text-royal-700">18,900.-</span>
+                  <span class="font-bold text-royal-700 shrink-0">18,900.-</span>
                 </label>
 
-                <label class="flex items-center justify-between p-3.5 rounded-2xl bg-white border border-slate-200 cursor-pointer hover:border-gold-500 transition-colors">
+                <label class="flex items-center justify-between p-3.5 rounded-2xl bg-white border border-slate-200 cursor-pointer hover:border-gold-500 transition-colors gap-2">
                   <div class="flex items-center gap-2.5">
                     <input type="checkbox" name="calcService" value="3499" data-name="THE JOE LIFT LITE" onchange="updateCalcTotal()" class="w-4 h-4 text-navy-900 rounded">
                     <span>THE JOE LIFT LITE</span>
                   </div>
-                  <span class="font-bold text-royal-700">3,499.-</span>
+                  <span class="font-bold text-royal-700 shrink-0">3,499.-</span>
                 </label>
 
-                <label class="flex items-center justify-between p-3.5 rounded-2xl bg-white border border-slate-200 cursor-pointer hover:border-gold-500 transition-colors">
+                <label class="flex items-center justify-between p-3.5 rounded-2xl bg-white border border-slate-200 cursor-pointer hover:border-gold-500 transition-colors gap-2">
                   <div class="flex items-center gap-2.5">
                     <input type="checkbox" name="calcService" value="5999" data-name="THE JOE LIFT SIGNATURE" onchange="updateCalcTotal()" class="w-4 h-4 text-navy-900 rounded">
                     <span>THE JOE LIFT SIGNATURE</span>
                   </div>
-                  <span class="font-bold text-royal-700">5,999.-</span>
+                  <span class="font-bold text-royal-700 shrink-0">5,999.-</span>
                 </label>
 
-                <label class="flex items-center justify-between p-3.5 rounded-2xl bg-white border border-slate-200 cursor-pointer hover:border-gold-500 transition-colors">
+                <label class="flex items-center justify-between p-3.5 rounded-2xl bg-white border border-slate-200 cursor-pointer hover:border-gold-500 transition-colors gap-2">
                   <div class="flex items-center gap-2.5">
                     <input type="checkbox" name="calcService" value="6000" data-name="Linear HIFU 400 Shots" onchange="updateCalcTotal()" class="w-4 h-4 text-navy-900 rounded">
                     <span>Linear HIFU 400 Shots</span>
                   </div>
-                  <span class="font-bold text-royal-700">6,000.-</span>
+                  <span class="font-bold text-royal-700 shrink-0">6,000.-</span>
                 </label>
 
-                <label class="flex items-center justify-between p-3.5 rounded-2xl bg-white border border-slate-200 cursor-pointer hover:border-gold-500 transition-colors">
+                <label class="flex items-center justify-between p-3.5 rounded-2xl bg-white border border-slate-200 cursor-pointer hover:border-gold-500 transition-colors gap-2">
                   <div class="flex items-center gap-2.5">
                     <input type="checkbox" name="calcService" value="4999" data-name="โปรแกรมฟิลเลอร์ ใต้ตา / ขมับ" onchange="updateCalcTotal()" class="w-4 h-4 text-navy-900 rounded">
                     <span>ฟิลเลอร์ ใต้ตา / ขมับ (เริ่มต้น)</span>
                   </div>
-                  <span class="font-bold text-royal-700">4,999.-</span>
+                  <span class="font-bold text-royal-700 shrink-0">4,999.-</span>
                 </label>
 
-                <label class="flex items-center justify-between p-3.5 rounded-2xl bg-white border border-slate-200 cursor-pointer hover:border-gold-500 transition-colors">
+                <label class="flex items-center justify-between p-3.5 rounded-2xl bg-white border border-slate-200 cursor-pointer hover:border-gold-500 transition-colors gap-2">
                   <div class="flex items-center gap-2.5">
                     <input type="checkbox" name="calcService" value="6999" data-name="ฟิลเลอร์ นิวร่า 1 CC" onchange="updateCalcTotal()" class="w-4 h-4 text-navy-900 rounded">
                     <span>ฟิลเลอร์ นิวร่า (1 CC)</span>
                   </div>
-                  <span class="font-bold text-royal-700">6,999.-</span>
+                  <span class="font-bold text-royal-700 shrink-0">6,999.-</span>
                 </label>
 
-                <label class="flex items-center justify-between p-3.5 rounded-2xl bg-white border border-slate-200 cursor-pointer hover:border-gold-500 transition-colors">
+                <label class="flex items-center justify-between p-3.5 rounded-2xl bg-white border border-slate-200 cursor-pointer hover:border-gold-500 transition-colors gap-2">
                   <div class="flex items-center gap-2.5">
                     <input type="checkbox" name="calcService" value="11999" data-name="ฟิลเลอร์ เรสที้ 1 CC" onchange="updateCalcTotal()" class="w-4 h-4 text-navy-900 rounded">
                     <span>ฟิลเลอร์ เรสที้ (1 CC)</span>
                   </div>
-                  <span class="font-bold text-royal-700">11,999.-</span>
+                  <span class="font-bold text-royal-700 shrink-0">11,999.-</span>
                 </label>
 
-                <label class="flex items-center justify-between p-3.5 rounded-2xl bg-white border border-slate-200 cursor-pointer hover:border-gold-500 transition-colors">
+                <label class="flex items-center justify-between p-3.5 rounded-2xl bg-white border border-slate-200 cursor-pointer hover:border-gold-500 transition-colors gap-2">
                   <div class="flex items-center gap-2.5">
                     <input type="checkbox" name="calcService" value="19999" data-name="Biostimulator sculp 1 ขวด" onchange="updateCalcTotal()" class="w-4 h-4 text-navy-900 rounded">
                     <span>Biostimulator sculp (1 ขวด)</span>
                   </div>
-                  <span class="font-bold text-royal-700">19,999.-</span>
+                  <span class="font-bold text-royal-700 shrink-0">19,999.-</span>
                 </label>
 
               </div>
             </div>
 
             <!-- Total Box -->
-            <div class="p-5 rounded-2xl bg-navy-950 text-white flex items-center justify-between">
+            <div class="p-5 rounded-2xl bg-navy-900 text-white flex items-center justify-between gap-4 border border-gold-500/30">
               <div>
                 <p class="text-xs text-gold-400 font-semibold">ยอดประเมินรวมเบื้องต้น</p>
                 <p class="text-xs text-slate-300 mt-0.5" id="selectedCountText">ยังไม่ได้เลือกรายการ</p>
@@ -1257,7 +1316,7 @@
 
             <!-- Booking Form Inputs -->
             <div>
-              <label class="block text-sm font-bold text-navy-950 mb-3">2. ข้อมูลสำหรับนัดหมายคิวแพทย์:</label>
+              <label class="block text-sm font-bold text-navy-900 mb-3">2. ข้อมูลสำหรับนัดหมายคิวแพทย์:</label>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label class="block text-xs text-slate-600 mb-1">ชื่อ - นามสกุล *</label>
@@ -1295,14 +1354,14 @@
     </section>
 
     <!-- LOCATION & CONTACT SECTION -->
-    <section id="location" class="py-20 bg-slate-50 border-t border-slate-200">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="location" class="py-20 bg-[#FAF8F4] border-t border-slate-200">
+      <div class="w-full max-w-[1520px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-14">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           
           <div class="lg:col-span-5 space-y-6">
             <div>
-              <span class="px-3 py-1 rounded-full bg-navy-950 text-gold-400 text-xs font-semibold uppercase tracking-wider">Location & Contact</span>
-              <h2 class="text-3xl font-extrabold text-navy-950 mt-2">เดอะโจ คลินิกเวชกรรม</h2>
+              <span class="px-3 py-1 rounded-full bg-navy-900 text-gold-400 text-xs font-semibold uppercase tracking-wider">Location & Contact</span>
+              <h2 class="text-3xl font-extrabold text-navy-900 mt-2">เดอะโจ คลินิกเวชกรรม</h2>
               <p class="text-xs text-slate-500 mt-1">THE JOE CLINIC • 135 ซอยลาซาล (ระหว่างซอยลาซาล 1 และ 3) ถนนสุขุมวิท บางนา</p>
             </div>
 
@@ -1329,7 +1388,7 @@
                 <i data-lucide="phone-call" class="w-5 h-5 text-gold-600 flex-shrink-0 mt-0.5"></i>
                 <div>
                   <strong>โทรศัพท์:</strong>
-                  <p class="text-navy-950 font-extrabold mt-0.5 text-base">065-6969390</p>
+                  <p class="text-navy-900 font-extrabold mt-0.5 text-base">065-6969390</p>
                 </div>
               </div>
 
@@ -1343,16 +1402,16 @@
 
               <div class="flex items-center gap-5 pt-3 border-t border-slate-100 text-xs font-medium">
                 <span class="flex items-center gap-1.5 text-slate-700">
-                  <i data-lucide="instagram" class="w-4 h-4 text-pink-600"></i> thejoeclinic
+                  <i data-lucide="instagram" class="w-4 h-4 text-gold-600"></i> thejoeclinic
                 </span>
                 <span class="flex items-center gap-1.5 text-slate-700">
-                  <i data-lucide="facebook" class="w-4 h-4 text-blue-600"></i> thejoeclinic
+                  <i data-lucide="facebook" class="w-4 h-4 text-royal-700"></i> thejoeclinic
                 </span>
               </div>
             </div>
 
             <div class="grid grid-cols-2 gap-3">
-              <a href="tel:0656969390" class="p-4 rounded-2xl bg-navy-950 text-white flex items-center gap-3 hover:bg-navy-900 transition-colors">
+              <a href="tel:0656969390" class="p-4 rounded-2xl bg-navy-900 text-white flex items-center gap-3 hover:bg-royal-700 transition-colors">
                 <div class="w-10 h-10 rounded-xl bg-gold-500/20 text-gold-400 flex items-center justify-center flex-shrink-0">
                   <i data-lucide="phone" class="w-5 h-5"></i>
                 </div>
@@ -1391,17 +1450,18 @@
     </section>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="bg-navy-950 text-slate-400 text-xs pt-14 pb-12 border-t border-gold-500/25">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- FOOTER (Logo Updated to Google Drive ID: 12dMadXTRqdBZtG5ngOnTnFquRji5GvNR) -->
+  <footer id="bottom" class="bg-navy-950 text-slate-400 text-xs pt-14 pb-12 border-t border-gold-500/25">
+    <div class="w-full max-w-[1520px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-14">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
         <div class="space-y-3">
           <div class="flex items-center gap-2.5">
             <img 
-              src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663940949164/gdpcbjTtUVUDuvvb.webp" 
+              src="https://drive.google.com/thumbnail?id=12dMadXTRqdBZtG5ngOnTnFquRji5GvNR&sz=w1000" 
+              referrerpolicy="no-referrer"
               alt="THE JOE CLINIC" 
-              class="w-9 h-9 rounded-lg object-contain bg-navy-900 p-1 border border-gold-500/40"
-              onerror="this.style.display='none'"
+              class="w-10 h-10 rounded-lg object-contain bg-navy-900 p-1 border border-gold-500/40"
+              onerror="tryNextLogoPath(this)"
             />
             <span class="font-serif font-bold text-white text-lg tracking-wider">THE JOE CLINIC</span>
           </div>
@@ -1521,7 +1581,7 @@
         <div class="w-14 h-14 rounded-full bg-emerald-100 text-emerald-600 mx-auto flex items-center justify-center">
           <i data-lucide="check" class="w-7 h-7"></i>
         </div>
-        <h4 class="text-xl font-bold text-navy-950">สรุปใบจองคิวและคัดลอกข้อความสำเร็จ!</h4>
+        <h4 class="text-xl font-bold text-navy-900">สรุปใบจองคิวและคัดลอกข้อความสำเร็จ!</h4>
         <div class="text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 rounded-xl py-2.5 px-3 font-medium space-y-1">
           <p>✅ <strong>บนมือถือ:</strong> กดปุ่มสีเขียวด้านล่าง ข้อความจะถูกพิมพ์ใส่ช่องแชท LINE <strong>@thejoeclinic</strong> อัตโนมัติ</p>
           <p>💻 <strong>บนคอมพิวเตอร์:</strong> สแกน QR Code ด้านล่างด้วยมือถือ หรือกด <strong>วาง (Ctrl+V)</strong> ในแชท LINE ได้เลย</p>
@@ -1540,11 +1600,11 @@
             <i data-lucide="send" class="w-4 h-4"></i>
             <span>เปิดแอป LINE พร้อมข้อความที่กรอกทันที</span>
           </a>
-          <button type="button" onclick="copyBookingSummaryText()" id="copyBookingBtn" class="px-4 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-navy-950 text-xs font-bold flex items-center justify-center gap-1.5 border border-slate-300">
+          <button type="button" onclick="copyBookingSummaryText()" id="copyBookingBtn" class="px-4 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-navy-900 text-xs font-bold flex items-center justify-center gap-1.5 border border-slate-300">
             <i data-lucide="copy" class="w-4 h-4"></i>
             <span>คัดลอกข้อความซ้ำ</span>
           </button>
-          <button type="button" onclick="closeBookingModal()" class="px-4 py-3 rounded-xl bg-navy-950 text-white text-xs font-semibold">
+          <button type="button" onclick="closeBookingModal()" class="px-4 py-3 rounded-xl bg-navy-900 text-white text-xs font-semibold">
             ปิดหน้าต่าง
           </button>
         </div>
@@ -1552,22 +1612,32 @@
     </div>
   </div>
 
-  <!-- FLOATING QUICK CONTACT -->
-  <div class="fixed bottom-6 right-4 sm:right-6 z-30 flex flex-col gap-3">
-    <a href="tel:0656969390" title="โทร 065-6969390" class="w-12 h-12 rounded-full bg-navy-950 text-gold-400 border border-gold-500/40 flex items-center justify-center shadow-xl hover:scale-110 transition-transform">
-      <i data-lucide="phone-call" class="w-5 h-5"></i>
+  <!-- FLOATING SCROLL UP/DOWN & QUICK CONTACT -->
+  <div class="fixed bottom-5 right-3 sm:right-5 z-30 flex flex-col items-center gap-2.5">
+    <!-- Small Scroll Up / Down Pill -->
+    <div class="flex flex-col rounded-full bg-navy-900/90 backdrop-blur border border-gold-500/40 shadow-lg overflow-hidden">
+      <button type="button" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" title="เลื่อนขึ้นบนสุด" aria-label="เลื่อนขึ้นบนสุด" class="w-8 h-8 flex items-center justify-center text-gold-300 hover:bg-gold-500 hover:text-navy-950 transition-colors">
+        <i data-lucide="chevron-up" class="w-4 h-4"></i>
+      </button>
+      <div class="h-[1px] bg-gold-500/25 w-full"></div>
+      <button type="button" onclick="window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' })" title="เลื่อนลงล่างสุด" aria-label="เลื่อนลงล่างสุด" class="w-8 h-8 flex items-center justify-center text-gold-300 hover:bg-gold-500 hover:text-navy-950 transition-colors">
+        <i data-lucide="chevron-down" class="w-4 h-4"></i>
+      </button>
+    </div>
+
+    <a href="tel:0656969390" title="โทร 065-6969390" class="w-11 h-11 rounded-full bg-navy-900 text-gold-400 border border-gold-500/40 flex items-center justify-center shadow-xl hover:scale-110 transition-transform">
+      <i data-lucide="phone-call" class="w-4 h-4"></i>
     </a>
-    <a href="https://line.me/R/ti/p/@thejoeclinic" target="_blank" title="LINE @thejoeclinic" class="w-12 h-12 rounded-full bg-[#06C755] text-white flex items-center justify-center shadow-xl hover:scale-110 transition-transform">
-      <i data-lucide="message-circle" class="w-6 h-6"></i>
+    <a href="https://line.me/R/ti/p/@thejoeclinic" target="_blank" title="LINE @thejoeclinic" class="w-11 h-11 rounded-full bg-[#06C755] text-white flex items-center justify-center shadow-xl hover:scale-110 transition-transform">
+      <i data-lucide="message-circle" class="w-5 h-5"></i>
     </a>
-    <button onclick="openBookingModal()" title="นัดหมายแพทย์" class="w-12 h-12 rounded-full gold-gradient-bg text-navy-950 flex items-center justify-center shadow-xl hover:scale-110 transition-transform">
-      <i data-lucide="calendar" class="w-5 h-5"></i>
+    <button onclick="openBookingModal()" title="นัดหมายแพทย์" class="w-11 h-11 rounded-full gold-gradient-bg text-navy-950 flex items-center justify-center shadow-xl hover:scale-110 transition-transform">
+      <i data-lucide="calendar" class="w-4 h-4"></i>
     </button>
   </div>
 
-  <!-- SCRIPTS & STATIC DOCTOR PHOTO RESOLVER -->
+  <!-- SCRIPTS -->
   <script>
-    // Immediately lock in static photo
     (function initDoctorPhotoImmediately() {
       const saved = getSavedDoctorPhoto();
       if (saved) {
@@ -1593,7 +1663,6 @@
       });
     });
 
-    // Mobile Menu
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
     function toggleMobileMenu() {
@@ -1601,7 +1670,6 @@
     }
     if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', toggleMobileMenu);
 
-    // Booking Modal
     const bookingModal = document.getElementById('bookingModal');
     const modalBookingForm = document.getElementById('modalBookingForm');
     const modalSuccessBox = document.getElementById('modalSuccessBox');
@@ -1641,7 +1709,6 @@
       openBookingModal();
     }
 
-    // Price Calculator
     function updateCalcTotal() {
       const checkboxes = document.querySelectorAll('input[name="calcService"]:checked');
       let total = 0;
@@ -1661,7 +1728,6 @@
     }
 
     const LINE_OA_ID = '@thejoeclinic';
-    // Optional: ใส่ URL ของ Google Apps Script หรือ Webhook ที่เชื่อมกับ LINE Messaging API เพื่อส่งแจ้งเตือนเข้าแอดมินอัตโนมัติ
     const LINE_WEBHOOK_URL = '';
     window.__latestBookingText = '';
 
@@ -1671,9 +1737,7 @@
           await navigator.clipboard.writeText(text);
           return true;
         }
-      } catch (e) {
-        // Fallback to textarea execCommand below
-      }
+      } catch (e) {}
       try {
         const textArea = document.createElement('textarea');
         textArea.value = text;
@@ -1708,7 +1772,6 @@
       window.__latestBookingText = bookingSummaryText;
       copyTextToClipboardFallback(bookingSummaryText);
 
-      // Build LINE OA pre-filled message deep link (works on LINE iOS/Android & QR scan)
       const encodedText = encodeURIComponent(bookingSummaryText);
       const lineOaMessageUrl = `https://line.me/R/oaMessage/${encodeURIComponent(LINE_OA_ID)}/?${encodedText}`;
 
@@ -1717,7 +1780,6 @@
         directLineBtn.href = lineOaMessageUrl;
       }
 
-      // Generate dynamic QR Code that embeds the exact booking text for PC users scanning with phone
       const qrImg = document.getElementById('lineBookingQrImg');
       if (qrImg) {
         qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&margin=6&data=${encodeURIComponent(lineOaMessageUrl)}`;
@@ -1728,7 +1790,6 @@
         modalSuccessMsg.innerText = bookingSummaryText;
       }
 
-      // Send background webhook if configured
       if (LINE_WEBHOOK_URL) {
         fetch(LINE_WEBHOOK_URL, {
           method: 'POST',
@@ -1743,7 +1804,6 @@
       modalSuccessBox.classList.remove('hidden');
       if (window.lucide) lucide.createIcons();
 
-      // If user is on a mobile device, trigger the LINE app deep link immediately
       const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
       if (isMobile) {
         window.location.href = lineOaMessageUrl;
